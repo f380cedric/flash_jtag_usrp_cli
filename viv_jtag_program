@@ -1,0 +1,8 @@
+#!/bin/sh -Cfu
+#
+# Copyright 2015 Ettus Research
+#
+# Flash FPGA device (X310 JTAG)
+# $1 is bit/bin FPGA image path
+VIVADO_EXEC=$HOME/Xilinx/Vivado/2014.4/bin/vivado
+"$VIVADO_EXEC" -mode batch -source viv_hardware_utils.tcl  -nolog -nojournal -tclargs program "$1"
